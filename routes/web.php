@@ -40,7 +40,9 @@ Route::middleware('locale')->group(function () {
 
         //Rotas para CRUD usuário
         Route::resource('user', UserController::class, ['except' => ['show']]);
+        //Rotas para CRUD categoria
         Route::resource('categoria', CategoriaController::class, ['except' => ['show']]);
+        //Rotas para CRUD produto
         Route::resource('produto', ProdutoController::class);
 
 
