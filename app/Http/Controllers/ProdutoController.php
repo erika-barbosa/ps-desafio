@@ -76,8 +76,8 @@ class ProdutoController extends Controller
         $produto = Produto::find($id);
 
         if ($request->hasFile('imagem')) {
-            Storage::delete('public/' . $produto->imagem);
-            $datas['imagem'] = '/storage/' . $request->file('imagem')->store('produtos', 'public');
+            Storage::delete('public/' . substr($produto->imagem, 9));
+            $data['imagem'] = '/storage/' . $request->file('imagem')->store('produtos', 'public');
         }
 
         $produto->update($data);
@@ -88,7 +88,7 @@ class ProdutoController extends Controller
     {
         $produto = Produto::find($id);
         if ($produto->imagem) {
-            Storage::delete('public/' . $produto->imagem);
+            Storage::delete('public/' . substr($produto->imagem, 9));
         }
         $produto->delete();
         return redirect()->route('produto.index')->with('success', 'Produto deletado com sucesso!');

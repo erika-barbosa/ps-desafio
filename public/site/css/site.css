@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+a:visited{
+  color: inherit;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+#site-header{
+  width: 100%;
+  height: 15vh;
+
+  background-color: white;
+  color: #374157;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 100;
+}
+
+#header-container{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 115%;
+  font-weight: 400;
+
+}
+
+#header-logo{
+  width: 30%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header-logo img{
+  width: 100%;
+  height: 90%;
+
+  object-fit: scale-down;
+  cursor: pointer;
+}
+
+#header-produtos{
+  width: 15%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+#header-categorias{
+  width: 15%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+#header-sacola{
+  width: 20%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+}
+
+#header-busca{
+  width: 20%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+@media(max-width: 400px){
+  #header-container{
+    font-size: 80%;
+  }
+  #icone-sacola{
+    font-size: 120%;
+  }
+}
+
+.slider {
+  display: block;
+  height: 85vh;
+  width: 100%;
+  max-width: 100vw;
+  min-width: calc(100vw - 18px);
+  margin: auto;
+  position: relative;
+}
+
+.slider li {
+  list-style: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.slider img {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+.slider input {
+  display: none;
+}
+
+.slider label {
+  background-color: white;
+  bottom: 10px;
+  cursor: pointer;
+  display: block;
+  height: 7px;
+  position: absolute;
+  width: 20px;
+  z-index: 10;
+}
+
+.slider li:nth-child(1) label {
+  left: 10px;
+}
+
+.slider li:nth-child(2) label {
+  left: 40px;
+}
+
+.slider li:nth-child(3) label {
+  left: 70px;
+}
+
+.slider img {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.slider li input:checked ~ img {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.slider li input:checked ~ label {
+  background-color: #EE4180;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  gap: 50px;
+  justify-content: center;
+}
+
+.index-produto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.index-produto img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.info-produto {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  padding-block: 10px;
+
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.info-produto p:nth-child(1) {
+  font-size: 24px;
+  font-weight: 600;
+  color: #25262b;
+}
+
+.info-produto p:nth-child(2) {
+  font-size: 20px;
+  font-weight: 700;
+  color: #575b64;
+}
+
+.botoes-produto {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.botoes-produto button:nth-child(1) {
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  background-color: #374157;
+  border-radius: 3px;
+  padding: 1rem 2rem;
+  color: white;
+  width: 70%;
+  cursor: pointer;
+}
+
+.botoes-produto button:nth-child(2) {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: white;
+  border-radius: 3px;
+  border: 2px solid #374157;
+  padding: 1rem 2rem;
+  color: #374157;
+  width: 20%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px){
+
+  .index-produto {
+    width: 260px;
+  }
+
+  .index-produto img {
+    height: 260px;
+  }
+
+  .info-produto {
+    flex-direction: column;
+  }
+
+}

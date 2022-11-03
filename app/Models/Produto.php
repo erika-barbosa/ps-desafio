@@ -18,6 +18,11 @@ class Produto extends Model
     'categoria_id'
   ];
 
+  public function getPrecoFormattedAttribute()
+  {
+    return 'R$ ' . number_format($this->preco, 2, ',');
+  }
+
   public function categoria()
   {
     return $this->belongsTo(Categoria::class);
