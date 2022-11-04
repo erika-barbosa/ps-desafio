@@ -9,17 +9,17 @@
     <li>
           <input type="radio" id="slide1" name="slide" checked>
           <label for="slide1"></label>
-          <img src="site/img/capa1.jpg" />
+          <img src="site/img/capa2.jpg" />
     </li>
     <li>
           <input type="radio" id="slide2" name="slide">
           <label for="slide2"></label>
-          <img src="site/img/capa2.jpg" />
+          <img src="site/img/capa3.jpg" />
     </li>
     <li>
           <input type="radio" id="slide3" name="slide">
           <label for="slide3"></label>
-          <img src="site/img/capa3.png" />
+          <img src="site/img/capa1.jpg" />
     </li>
   </ul>
 

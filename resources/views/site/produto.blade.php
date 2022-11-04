@@ -15,6 +15,7 @@
       </div>
     </div>
    <div class="info-produto-especifico">
+      <p>{{$produto->categoria->categoria}}</p>
       <h3>{{$produto['nome']}}</h3>
       <p>{{$produto['descricao']}}</p>
       <p>{{$produto['preco_formatted']}}</p>

@@ -107,6 +107,7 @@ a:visited{
   display: flex;
   align-items: center;
   color: #25262b;
+  cursor: pointer;
 }
 
 #header-busca a{
@@ -289,6 +290,13 @@ a:visited{
   width: 100%;
   cursor: pointer;
   white-space: nowrap;
+  transition: 0.15s;
+}
+
+.botao-detalhes:hover {
+  background-color: #EE4180;
+  color: white;
+  box-shadow: 0 5px 5px #d0d0d4;
 }
 
 .botao-sacola {
@@ -304,6 +312,12 @@ a:visited{
   color: #374157;
   width: 20%;
   cursor: pointer;
+}
+
+.botao-sacola:hover {
+  background-color: #374157;
+  color: white;
+  box-shadow: 0 5px 5px #d0d0d4;
 }
 
 @media screen and (max-width: 700px){
@@ -438,19 +452,23 @@ a:visited{
   font-family: 'Noto Sans', sans-serif;
 }
 
-.info-produto-especifico h3:nth-child(1){
+.info-produto-especifico p:nth-child(1){
+  color: #EFC0B6;
+}
+
+.info-produto-especifico h3:nth-child(2){
   font-size: 48px;
   font-weight: 600;
   color: #25262b;
 }
 
-.info-produto-especifico p:nth-child(2){
+.info-produto-especifico p:nth-child(3){
   font-size: 22px;
   font-weight: 300;
   color: #575b64;
 }
 
-.info-produto-especifico p:nth-child(3){
+.info-produto-especifico p:nth-child(4){
   font-size: 36px;
   font-weight: 700;
   color: #575b64;
@@ -458,9 +476,14 @@ a:visited{
   padding-bottom: 50px;
 }
 
-.info-produto-especifico button:nth-child(4){
+.info-produto-especifico button:nth-child(5){
   width: 30%;
   background-color: #EE4180;
+}
+
+.info-produto-especifico button:nth-child(5):hover{
+  background-color: #25262b;
+  box-shadow: 0 5px 5px #d0d0d4;
 }
 
 @media(max-width: 1036px){
@@ -537,19 +560,19 @@ a:visited{
     margin: 0 auto;
   }
 
-  .info-produto-especifico h3:nth-child(1){
+  .info-produto-especifico h3:nth-child(2){
     color: #25262b;
     text-align: center;    
   }
   
-  .info-produto-especifico p:nth-child(2){
+  .info-produto-especifico p:nth-child(3){
     font-size: 22px;
     font-weight: 300;
     color: #575b64;
     text-align: center; 
   }
   
-  .info-produto-especifico p:nth-child(3){
+  .info-produto-especifico p:nth-child(4){
     font-size: 36px;
     font-weight: 700;
     color: #575b64;
@@ -558,7 +581,7 @@ a:visited{
     text-align: center; 
   }
   
-  .info-produto-especifico button:nth-child(4){
+  .info-produto-especifico button:nth-child(5){
     width: 30%;
     background-color: #EE4180;
   }
@@ -571,21 +594,21 @@ a:visited{
     height: 300px;
   }
 
-  .info-produto-especifico h3:nth-child(1){
+  .info-produto-especifico h3:nth-child(2){
     color: #25262b;
     text-align: center;  
     font-size: 34px;  
   }
   
-  .info-produto-especifico p:nth-child(2){
+  .info-produto-especifico p:nth-child(3){
     font-size: 18px;
   }
   
-  .info-produto-especifico p:nth-child(3){
+  .info-produto-especifico p:nth-child(4){
     font-size: 30px
   }
   
-  .info-produto-especifico button:nth-child(4){
+  .info-produto-especifico button:nth-child(5){
     width: 50%;
     background-color: #EE4180;
   }
@@ -636,5 +659,104 @@ h1 {
   .ver-todos-produtos{
     font-size: 20px;
     padding: 12px 24px;
+  }
+}
+
+.filtros{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 30px;
+}
+
+.select{
+  display: flex;
+  width: 50%;
+  font-family: 'Lora', serif;
+  justify-content: end;
+}
+
+.select-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  gap: 20px;
+}
+
+.select-container input{
+  background-color: #EE4180;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.select-container input:hover{
+  background-color: #25262b;
+}
+
+#categorias{
+  font-size: 16px;
+  border: 2px solid #EFC0B6;
+  border-radius: 3px;
+  padding: 8px 16px;
+}
+
+.busca{
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  gap: 20px;
+}
+
+.busca input{
+  color: #25262b;
+  border: 2px solid #adb0b6;
+  border-radius: 3px;
+  padding: 8px 16px;
+}
+
+.busca button{
+  background-color: #EE4180;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.busca button:hover{
+  background-color: #25262b;
+}
+
+@media(max-width: 870px){
+  .filtros{
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .select-container{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .select{
+    padding-left: 0;
+    width: 100%;
+  }
+  
+  .busca{
+    width: 100%;
+    flex-direction: column;
   }
 }

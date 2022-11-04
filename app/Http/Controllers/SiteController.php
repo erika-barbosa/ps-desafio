@@ -16,7 +16,6 @@ class SiteController extends Controller
     public function index()
     {
         $produtos = Produto::orderBy('created_at', 'desc')->take(6)->get();
-
         return view('site.index', compact('produtos'));
     }
 
@@ -27,11 +26,24 @@ class SiteController extends Controller
         return view('site.produtos', compact('produtos', 'categorias'));
     }
 
-    public function produtosFiltrados($nome)
+    public function produtosFiltrados(Request $request)
     {
-        $categoria = Categoria::where('categoria', $nome)->first();
-        $produtos = Produto::where('categoria_id', $categoria->id)->get();
-        return view('site.produtos', compact('produtos'));
+
+        $categoriaSelect = Categoria::where('categoria', $request['categorias'])->first();
+        $produtos = [];
+        if (isset($categoriaSelect))
+            $produtos = Produto::where('categoria_id', $categoriaSelect->id)->get();
+        $categorias = Categoria::all();
+        return view('site.produtos', compact('produtos', 'categoriaSelect', 'categorias'));
+    }
+
+    public function produtosBuscados(Request $request)
+    {
+        $produtos = Produto::where('nome', 'LIKE', "%{$request['busca']}%")
+            ->orWhere('descricao', 'LIKE', "%{$request['busca']}%")
+            ->get();
+        $categorias = Categoria::all();
+        return view('site.produtos', compact('produtos', 'categorias'));
     }
 
     /**

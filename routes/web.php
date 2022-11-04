@@ -22,9 +22,10 @@ use App\Http\Controllers\SiteController;
 */
 
 Route::get('siteIndex', [SiteController::class, 'index'])->name('siteIndex');
-Route::get('produto/{id}', [SiteController::class, 'show'])->name('ver-produto');
+Route::get('produtos/{id}', [SiteController::class, 'show'])->name('ver-produto');
 Route::get('produtos', [SiteController::class, 'todosProdutos'])->name('produtos');
-Route::get('produtos/{nome}', [SiteController::class, 'produtosFiltrados'])->name('produtosFiltrados');
+Route::get('produtosFiltrados', [SiteController::class, 'produtosFiltrados'])->name('produtosFiltrados');
+Route::get('produtosBuscados', [SiteController::class, 'produtosBuscados'])->name('produtosBuscados');
 
 Route::middleware('locale')->group(function () {
 

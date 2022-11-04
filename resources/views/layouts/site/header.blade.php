@@ -1,7 +1,9 @@
 <header id="site-header">
     <div id="header-container">
       <div id="header-busca">
-        <a href="#busca">Busca</a>
+        <a href="{{ route('produtos') }}">
+          <span class="material-symbols-outlined">search</span>
+        </a>  
       </div>
       
       <div id="header-produtos">
@@ -16,7 +18,7 @@
       </div>
 
       <div id="header-categorias">
-        <a href="#categorias">Categorias</a>
+        <a href="{{ route('produtos') }}">Categorias</a>
       </div>
 
       <div id="header-sacola">
