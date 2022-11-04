@@ -17,10 +17,10 @@ class ProdutoFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => $this->faker->name(),
+            'nome' => $this->faker->sentence($nbWords = 2, $variableNbWords = false),
             'descricao' => $this->faker->sentence($nbWords = 5, $variableNbWords = true),
             'quantidade' => $this->faker->numberBetween(0, 100),
-            'preco' => $this->faker->numberBetween(0, 100),
+            'preco' => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 500),
             'imagem' => $this->faker->imageUrl()
         ];
     }

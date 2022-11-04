@@ -5,11 +5,14 @@
       </div>
       
       <div id="header-produtos">
-          <a href="#produtos">Produtos</a>
+          <a href="{{ route('produtos') }}">Produtos</a>
       </div>
 
       <div id="header-logo">
-        <img src="{{asset("site/img/logoAdapti.png")}}" alt="Logo da Adapti" onclick="openPage('https://github.com/erika-barbosa')">
+        <a href="{{ route('siteIndex') }}">
+          <img src="{{asset("site/img/Logo-ERK-horizontal4.png")}}" alt="Logo ERK">
+        </a>
+        
       </div>
 
       <div id="header-categorias">

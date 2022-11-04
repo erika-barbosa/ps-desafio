@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,23 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::all();
+        $produtos = Produto::orderBy('created_at', 'desc')->take(6)->get();
 
         return view('site.index', compact('produtos'));
+    }
+
+    public function todosProdutos()
+    {
+        $produtos = Produto::all();
+        $categorias = Categoria::all();
+        return view('site.produtos', compact('produtos', 'categorias'));
+    }
+
+    public function produtosFiltrados($nome)
+    {
+        $categoria = Categoria::where('categoria', $nome)->first();
+        $produtos = Produto::where('categoria_id', $categoria->id)->get();
+        return view('site.produtos', compact('produtos'));
     }
 
     /**
@@ -48,7 +63,9 @@ class SiteController extends Controller
      */
     public function show($id)
     {
-        //
+        $produto = Produto::find($id);
+
+        return view('site.produto', compact('produto'));
     }
 
     /**
