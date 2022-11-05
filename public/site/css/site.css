@@ -228,7 +228,7 @@ a:visited{
   justify-content: center;
   font-family: 'Noto Sans', sans-serif;
   font-size: 30px;
-  background-color: #ffffff80;
+  background-color: #ffffff95;
   color: white;
   position: absolute;
   padding-bottom: 20px;
@@ -400,6 +400,7 @@ a:visited{
   background-color: #EE4180;
   padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 #redes-sociais img:nth-child(2) {
@@ -408,6 +409,7 @@ a:visited{
   background-color: #EE4180;
   padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 #redes-sociais img:nth-child(3){
@@ -416,6 +418,7 @@ a:visited{
   background-color: #EE4180;
   padding: 10px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .produto-especifico{
@@ -519,6 +522,7 @@ a:visited{
     background-color: #EE4180;
     padding: 10px;
     border-radius: 50%;
+    cursor: pointer;
   }
   
   #redes-sociais img:nth-child(2) {
@@ -527,6 +531,7 @@ a:visited{
     background-color: #EE4180;
     padding: 10px;
     border-radius: 50%;
+    cursor: pointer;
   }
   
   #redes-sociais img:nth-child(3){
@@ -535,6 +540,7 @@ a:visited{
     background-color: #EE4180;
     padding: 10px;
     border-radius: 50%;
+    cursor: pointer;
   }
 }
 
